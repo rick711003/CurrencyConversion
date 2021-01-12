@@ -32,7 +32,7 @@ public struct ConverterGridBuilder {
         interactor.output = presenter
         presenter.interactor = interactor
         
-        viewController.output = presenter
+        viewController.presenter = presenter
         return viewController
     }
 }

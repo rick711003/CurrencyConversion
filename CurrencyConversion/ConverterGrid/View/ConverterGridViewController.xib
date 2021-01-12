@@ -39,6 +39,9 @@
                     <state key="normal" title="USD" image="default_down">
                         <color key="titleColor" systemColor="labelColor"/>
                     </state>
+                    <connections>
+                        <action selector="tapCurrencyButton:" destination="-1" eventType="touchUpInside" id="D4A-tC-6UF"/>
+                    </connections>
                 </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="npC-u0-cH4">
                     <rect key="frame" x="0.0" y="174" width="414" height="732"/>
@@ -67,12 +70,6 @@
             </constraints>
             <point key="canvasLocation" x="-200.00000000000003" y="81.696428571428569"/>
         </view>
-        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kJQ-wI-xo7">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <viewLayoutGuide key="safeArea" id="Ixd-zA-Ecn"/>
-            <point key="canvasLocation" x="-655" y="3"/>
-        </collectionReusableView>
     </objects>
     <resources>
         <image name="default_down" width="72" height="72"/>

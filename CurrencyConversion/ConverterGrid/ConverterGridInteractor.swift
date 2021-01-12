@@ -16,5 +16,21 @@ class ConverterGridInteractor {
 }
 
 extension ConverterGridInteractor: ConverterGridInteractorInput {
+    func fetchCurrencies() {
+        service?.fetchCurrenciesList(completion: { [weak self] (currencies: [Currency]?, error: Error?) in
+            guard let currencies = currencies, error == nil else {
+                return
+            }
+            self?.output?.fetchedCurrencies(currencies)
+        })
+    }
     
+    func fetchExchangeRates() {
+        service?.fetchExchangeRates(completion: { [weak self] (exchangeRates: [ExchangeRate]?, error: Error?) in
+            guard let exchangeRates = exchangeRates, error == nil else {
+                return
+            }
+            self?.output?.fetchedExchangeRates(exchangeRates)
+        })
+    }
 }
