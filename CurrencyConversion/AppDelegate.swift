@@ -10,21 +10,15 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-    var service: WebService?
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        service = WebService(session: URLSession(configuration: .ephemeral,
-                                                 delegate: nil,
-                                                 delegateQueue: .main))
-        service?.fetchCurrenciesList(completion: { (currencies: [Currency]?, error: Error?) in
-            print(currencies ?? " fetch currencies list error")
-        })
-        
-        service?.fetchExchangeRates(completion: { (exchangeRates: [ExchangeRate]?, error: Error?) in
-            print(exchangeRates ?? " fetch currencies list error")
-        })
+        if #available(iOS 13, *) {
+            // do nothing, root view will create in SceneDelegate
+        } else {
+            settingDefaultViewController()
+        }
         return true
     }
 
@@ -42,6 +36,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
+    private func settingDefaultViewController() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let converterGridBuilder = ConverterGridBuilder()
+        let converterGridViewController = converterGridBuilder.build()
+        window?.rootViewController = converterGridViewController
+        window?.makeKeyAndVisible()
+    }
 }
 
