@@ -10,7 +10,6 @@
 		9BED09FD25AC5CAA009C1487 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BED09FC25AC5CAA009C1487 /* AppDelegate.swift */; };
 		9BED09FF25AC5CAA009C1487 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BED09FE25AC5CAA009C1487 /* SceneDelegate.swift */; };
 		9BED0A0125AC5CAA009C1487 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BED0A0025AC5CAA009C1487 /* ViewController.swift */; };
-		9BED0A0425AC5CAA009C1487 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BED0A0225AC5CAA009C1487 /* Main.storyboard */; };
 		9BED0A0625AC5CAA009C1487 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BED0A0525AC5CAA009C1487 /* Assets.xcassets */; };
 		9BED0A0925AC5CAA009C1487 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BED0A0725AC5CAA009C1487 /* LaunchScreen.storyboard */; };
 		9BED0A1425AC5CAB009C1487 /* CurrencyConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BED0A1325AC5CAB009C1487 /* CurrencyConversionTests.swift */; };
@@ -29,6 +28,9 @@
 		9BED0A8325AD44A7009C1487 /* ConverterGridProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BED0A8225AD44A7009C1487 /* ConverterGridProtocols.swift */; };
 		9BED0A8925AD45BF009C1487 /* ConverterGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BED0A8825AD45BF009C1487 /* ConverterGridViewController.swift */; };
 		9BED0A8E25AD45E2009C1487 /* ConverterGridViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BED0A8D25AD45E2009C1487 /* ConverterGridViewController.xib */; };
+		9BF6321025AD5C4900876524 /* ExchangeRateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF6320F25AD5C4900876524 /* ExchangeRateCell.swift */; };
+		9BF6321525AD5C6B00876524 /* ExchangeRateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BF6321425AD5C6B00876524 /* ExchangeRateCell.xib */; };
+		9BF6322D25AD5E9A00876524 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BF6322B25AD5E9A00876524 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +55,6 @@
 		9BED09FC25AC5CAA009C1487 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BED09FE25AC5CAA009C1487 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9BED0A0025AC5CAA009C1487 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9BED0A0325AC5CAA009C1487 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9BED0A0525AC5CAA009C1487 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BED0A0825AC5CAA009C1487 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9BED0A0A25AC5CAA009C1487 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +78,9 @@
 		9BED0A8225AD44A7009C1487 /* ConverterGridProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterGridProtocols.swift; sourceTree = "<group>"; };
 		9BED0A8825AD45BF009C1487 /* ConverterGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterGridViewController.swift; sourceTree = "<group>"; };
 		9BED0A8D25AD45E2009C1487 /* ConverterGridViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConverterGridViewController.xib; sourceTree = "<group>"; };
+		9BF6320F25AD5C4900876524 /* ExchangeRateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateCell.swift; sourceTree = "<group>"; };
+		9BF6321425AD5C6B00876524 /* ExchangeRateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExchangeRateCell.xib; sourceTree = "<group>"; };
+		9BF6322C25AD5E9A00876524 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,9 +136,9 @@
 				9BED09FC25AC5CAA009C1487 /* AppDelegate.swift */,
 				9BED09FE25AC5CAA009C1487 /* SceneDelegate.swift */,
 				9BED0A0025AC5CAA009C1487 /* ViewController.swift */,
-				9BED0A0225AC5CAA009C1487 /* Main.storyboard */,
 				9BED0A0525AC5CAA009C1487 /* Assets.xcassets */,
 				9BED0A0725AC5CAA009C1487 /* LaunchScreen.storyboard */,
+				9BF6322B25AD5E9A00876524 /* Main.storyboard */,
 				9BED0A0A25AC5CAA009C1487 /* Info.plist */,
 			);
 			path = CurrencyConversion;
@@ -206,6 +210,8 @@
 			children = (
 				9BED0A8825AD45BF009C1487 /* ConverterGridViewController.swift */,
 				9BED0A8D25AD45E2009C1487 /* ConverterGridViewController.xib */,
+				9BF6320F25AD5C4900876524 /* ExchangeRateCell.swift */,
+				9BF6321425AD5C6B00876524 /* ExchangeRateCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -314,9 +320,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BED0A0925AC5CAA009C1487 /* LaunchScreen.storyboard in Resources */,
+				9BF6322D25AD5E9A00876524 /* Main.storyboard in Resources */,
 				9BED0A8E25AD45E2009C1487 /* ConverterGridViewController.xib in Resources */,
+				9BF6321525AD5C6B00876524 /* ExchangeRateCell.xib in Resources */,
 				9BED0A0625AC5CAA009C1487 /* Assets.xcassets in Resources */,
-				9BED0A0425AC5CAA009C1487 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +354,7 @@
 				9BED0A0125AC5CAA009C1487 /* ViewController.swift in Sources */,
 				9BED09FD25AC5CAA009C1487 /* AppDelegate.swift in Sources */,
 				9BED0A7425AD440A009C1487 /* ConverterGridPresenter.swift in Sources */,
+				9BF6321025AD5C4900876524 /* ExchangeRateCell.swift in Sources */,
 				9BED0A3325AC5EE1009C1487 /* APIResource.swift in Sources */,
 				9BED0A7925AD444E009C1487 /* ConverterGridInteractor.swift in Sources */,
 				9BED0A6025AC7C2D009C1487 /* ExchangeRate.swift in Sources */,
@@ -392,20 +400,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9BED0A0225AC5CAA009C1487 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9BED0A0325AC5CAA009C1487 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9BED0A0725AC5CAA009C1487 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				9BED0A0825AC5CAA009C1487 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9BF6322B25AD5E9A00876524 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BF6322C25AD5E9A00876524 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
