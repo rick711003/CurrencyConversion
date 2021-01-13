@@ -10,7 +10,7 @@ import Foundation
 public struct ConverterGridBuilder {
     
     private let service: WebService?
-    
+    private let cacheManager: CacheManager = CacheManager()
     public init() {
         service = WebService(session: URLSession(configuration: .ephemeral,
                                                  delegate: nil,
@@ -28,7 +28,7 @@ public struct ConverterGridBuilder {
         presenter.view = viewController
         presenter.router = router
         
-        let interactor = ConverterGridInteractor(service: service)
+        let interactor = ConverterGridInteractor(service: service, cacheManager: cacheManager)
         interactor.output = presenter
         presenter.interactor = interactor
         

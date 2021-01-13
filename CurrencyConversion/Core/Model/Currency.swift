@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Currency {
+struct Currency: Codable {
     let name: String?
     let shotName: String?
 }

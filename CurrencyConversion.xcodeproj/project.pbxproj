@@ -32,6 +32,7 @@
 		9BF6321525AD5C6B00876524 /* ExchangeRateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BF6321425AD5C6B00876524 /* ExchangeRateCell.xib */; };
 		9BF6322D25AD5E9A00876524 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BF6322B25AD5E9A00876524 /* Main.storyboard */; };
 		9BF6328C25AED63000876524 /* ExchangeRateCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF6328B25AED63000876524 /* ExchangeRateCellModel.swift */; };
+		9BF6329B25AF24D000876524 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF6329A25AF24D000876524 /* CacheManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		9BF6321425AD5C6B00876524 /* ExchangeRateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExchangeRateCell.xib; sourceTree = "<group>"; };
 		9BF6322C25AD5E9A00876524 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9BF6328B25AED63000876524 /* ExchangeRateCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateCellModel.swift; sourceTree = "<group>"; };
+		9BF6329A25AF24D000876524 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 		9BED0A2F25AC5E36009C1487 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9BF6329925AF24BC00876524 /* Cache */,
 				9BED0A4F25AC60DA009C1487 /* Model */,
 				9BED0A4E25AC60CB009C1487 /* WebService */,
 			);
@@ -217,6 +220,14 @@
 				9BF6328B25AED63000876524 /* ExchangeRateCellModel.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9BF6329925AF24BC00876524 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				9BF6329A25AF24D000876524 /* CacheManager.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +375,7 @@
 				9BED0A6025AC7C2D009C1487 /* ExchangeRate.swift in Sources */,
 				9BED0A3B25AC5FDC009C1487 /* APIRequest.swift in Sources */,
 				9BED0A6C25AD4380009C1487 /* ConverterGridBuilder.swift in Sources */,
+				9BF6329B25AF24D000876524 /* CacheManager.swift in Sources */,
 				9BED0A8925AD45BF009C1487 /* ConverterGridViewController.swift in Sources */,
 				9BED0A4525AC6068009C1487 /* CurrencyRequest.swift in Sources */,
 				9BED09FF25AC5CAA009C1487 /* SceneDelegate.swift in Sources */,

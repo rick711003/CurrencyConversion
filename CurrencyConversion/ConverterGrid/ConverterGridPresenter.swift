@@ -42,16 +42,10 @@ extension ConverterGridPresenter: ConverterGridViewOutput {
     }
     
     func viewIsReady() {
-        // if not over 30 min {
         interactor?.fetchExchangeRates()
-        // } else {
-        // update exchangeRateCellModels
     }
 
     func tappedCurrencyButton() {
-        // if cache have data {
-        // view?.currenciesIsReady()
-        // } else {
         interactor?.fetchCurrencies()
     }
     
