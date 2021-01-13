@@ -10,24 +10,21 @@ import UIKit
 public class ExchangeRateCell: UICollectionViewCell {
     @IBOutlet weak var currencyNameLabel: UILabel!
     @IBOutlet weak var rateLabel: UILabel!
-    var cellModel: ExchangeRate? = nil
+    @IBOutlet weak var exchangeValueLabel: UILabel!
+    var cellModel: ExchangeRateCellModel? = nil
     public override func awakeFromNib() {
         contentView.layer.borderWidth = 1
-        contentView.layer.borderColor = UIColor.green.cgColor
+        contentView.layer.borderColor = UIColor.lightGray.cgColor
         contentView.layer.cornerRadius = 3
     }
     
-    func configCell(cellModel: ExchangeRate?) {
+    func configCell(cellModel: ExchangeRateCellModel?) {
         guard let cellModel = cellModel else {
             return
         }
         self.cellModel = cellModel
-        if let currenyName = cellModel.toCurrency {
-            currencyNameLabel.text = currenyName
-        } else {
-            currencyNameLabel.text = cellModel.fromCurrency
-        }
-        
-        rateLabel.text = cellModel.rate?.description
+        currencyNameLabel.text = cellModel.name
+        exchangeValueLabel.text = String(cellModel.amount)
+        rateLabel.text = String(cellModel.rate)
     }
 }

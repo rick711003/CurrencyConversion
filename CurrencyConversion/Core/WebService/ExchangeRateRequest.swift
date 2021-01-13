@@ -29,7 +29,10 @@ extension ExchangeRateRequest: APIRequest {
                       let fromCurrency = json["source"] as? String else {
                     continue
                 }
-                let toCurrency = exchangeRateFromDictionary.key.replace(target: fromCurrency, withString: "")
+                var toCurrency = exchangeRateFromDictionary.key.replace(target: fromCurrency, withString: "")
+                if toCurrency.isEmpty {
+                    toCurrency = fromCurrency
+                }
                 exchangeRates.append(ExchangeRate(fromCurrency: fromCurrency, toCurrency: toCurrency, rate: rate))
             }
             return exchangeRates

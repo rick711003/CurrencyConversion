@@ -31,6 +31,7 @@
 		9BF6321025AD5C4900876524 /* ExchangeRateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF6320F25AD5C4900876524 /* ExchangeRateCell.swift */; };
 		9BF6321525AD5C6B00876524 /* ExchangeRateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BF6321425AD5C6B00876524 /* ExchangeRateCell.xib */; };
 		9BF6322D25AD5E9A00876524 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BF6322B25AD5E9A00876524 /* Main.storyboard */; };
+		9BF6328C25AED63000876524 /* ExchangeRateCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF6328B25AED63000876524 /* ExchangeRateCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		9BF6320F25AD5C4900876524 /* ExchangeRateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateCell.swift; sourceTree = "<group>"; };
 		9BF6321425AD5C6B00876524 /* ExchangeRateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExchangeRateCell.xib; sourceTree = "<group>"; };
 		9BF6322C25AD5E9A00876524 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9BF6328B25AED63000876524 /* ExchangeRateCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 				9BED0A8D25AD45E2009C1487 /* ConverterGridViewController.xib */,
 				9BF6320F25AD5C4900876524 /* ExchangeRateCell.swift */,
 				9BF6321425AD5C6B00876524 /* ExchangeRateCell.xib */,
+				9BF6328B25AED63000876524 /* ExchangeRateCellModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				9BED0A4A25AC607D009C1487 /* ExchangeRateRequest.swift in Sources */,
 				9BED0A0125AC5CAA009C1487 /* ViewController.swift in Sources */,
 				9BED09FD25AC5CAA009C1487 /* AppDelegate.swift in Sources */,
+				9BF6328C25AED63000876524 /* ExchangeRateCellModel.swift in Sources */,
 				9BED0A7425AD440A009C1487 /* ConverterGridPresenter.swift in Sources */,
 				9BF6321025AD5C4900876524 /* ExchangeRateCell.swift in Sources */,
 				9BED0A3325AC5EE1009C1487 /* APIResource.swift in Sources */,

@@ -9,14 +9,21 @@ import Foundation
 
 protocol ConverterGridViewInput: class {
     func exchangeRatesIsReady()
+    func currenciesIsReady()
+    func updateCurrencyButtonText()
 }
 
 protocol ConverterGridViewOutput {
-    var exchangeRatesCount: Int { get }
-    var exchangeRates: [ExchangeRate] { get }
+    var exchangeRateCellModelsCount: Int { get }
+    var exchangeRateCellModels: [ExchangeRateCellModel] { get }
+    var currenciesCount: Int { get }
+    var currencies: [Currency] { get }
+    var currentSelectedCurrency: Currency? { get }
 
     func viewIsReady()
     func tappedCurrencyButton()
+    func didSelectCurrency(with currency: Currency)
+    func didChangeAmount(with amount: Double)
 }
 
 protocol ConverterGridInteractorInput {
@@ -29,6 +36,4 @@ protocol ConverterGridInteractorOutput: class {
     func fetchedExchangeRates(_ exchangeRates: [ExchangeRate])
 }
 
-protocol ConverterGridRouterInput {
-    
-}
+protocol ConverterGridRouterInput {}
