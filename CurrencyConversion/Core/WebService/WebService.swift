@@ -18,9 +18,7 @@ public class WebService {
     }
     
     func fetchCurrenciesList(completion: @escaping (_ modelType: [Currency]?, _ error: Error?) -> Void) {
-        // need to move out the access_key
-        let queryItems = [URLQueryItem(name: "access_key", value: "489f5607d6bbd7ce0c69c32d157675bc")]
-        let tmpCurrencyRequest = CurrencyRequest(queryItems: queryItems, session: session)
+        let tmpCurrencyRequest = CurrencyRequest(session: session)
         currencyRequest = tmpCurrencyRequest
         tmpCurrencyRequest.load { (currencies: [Currency]?, error: Error?) in
             guard let currencies = currencies, error == nil else {
@@ -32,9 +30,7 @@ public class WebService {
     }
     
     func fetchExchangeRates(completion: @escaping (_ modelType: [ExchangeRate]?, _ error: Error?) -> Void) {
-        // need to move out the access_key
-        let queryItems = [URLQueryItem(name: "access_key", value: "489f5607d6bbd7ce0c69c32d157675bc"),
-                          URLQueryItem(name: "format", value:"1")]
+        let queryItems = [URLQueryItem(name: "format", value:"1")]
         let tmpExchangeRatesRequest = ExchangeRateRequest(queryItems: queryItems, session: session)
         exchangeRatesRequest = tmpExchangeRatesRequest
         tmpExchangeRatesRequest.load { (exchangeRates: [ExchangeRate]?, error: Error?) in

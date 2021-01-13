@@ -18,7 +18,7 @@ protocol ConverterGridViewOutput {
     var exchangeRateCellModels: [ExchangeRateCellModel] { get }
     var currenciesCount: Int { get }
     var currencies: [Currency] { get }
-    var currentSelectedCurrency: Currency? { get }
+    var selectedCurrency: Currency? { get }
 
     func viewIsReady()
     func tappedCurrencyButton()

@@ -13,12 +13,12 @@ class ConverterGridPresenter {
     var router: ConverterGridRouterInput?
     var currencies: [Currency] = []
     var exchangeRates: [ExchangeRate] = []
-    var currentSelectedCurrency: Currency?
+    var selectedCurrency: Currency?
     var exchangeRateCellModels: [ExchangeRateCellModel] = []
     var currentAmount: Double = 0.0
     
     private func updateCurrentCurrencyExchangeRate() {
-        let exchangeRateObject = exchangeRates.filter { $0.toCurrency ==  currentSelectedCurrency?.shotName }
+        let exchangeRateObject = exchangeRates.filter { $0.toCurrency ==  selectedCurrency?.shotName }
         if let currentRate = exchangeRateObject.first?.rate {
             exchangeRateCellModels = exchangeRates.compactMap {
                 let newRate = ($0.rate ?? 0.0) / currentRate
@@ -50,7 +50,7 @@ extension ConverterGridPresenter: ConverterGridViewOutput {
     }
     
     func didSelectCurrency(with currency: Currency) {
-        self.currentSelectedCurrency = currency
+        self.selectedCurrency = currency
         updateCurrentCurrencyExchangeRate()
         view?.updateCurrencyButtonText()
     }

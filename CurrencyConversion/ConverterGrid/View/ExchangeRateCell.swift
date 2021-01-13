@@ -8,14 +8,21 @@
 import UIKit
 
 public class ExchangeRateCell: UICollectionViewCell {
+    
+    private enum Constant {
+        static let borderWidth: CGFloat = 1
+        static let cornerRadius: CGFloat = 3
+    }
+    
     @IBOutlet weak var currencyNameLabel: UILabel!
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var exchangeValueLabel: UILabel!
     var cellModel: ExchangeRateCellModel? = nil
+        
     public override func awakeFromNib() {
-        contentView.layer.borderWidth = 1
+        contentView.layer.borderWidth = Constant.borderWidth
         contentView.layer.borderColor = UIColor.lightGray.cgColor
-        contentView.layer.cornerRadius = 3
+        contentView.layer.cornerRadius = Constant.cornerRadius
     }
     
     func configCell(cellModel: ExchangeRateCellModel?) {

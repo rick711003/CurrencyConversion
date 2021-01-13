@@ -19,6 +19,7 @@ extension APIResource {
         var components = URLComponents(string: "http://api.currencylayer.com/")!
         components.path = methodPath
         components.queryItems = queryItems
+        components.queryItems?.append(URLQueryItem(name: "access_key", value: "489f5607d6bbd7ce0c69c32d157675bc"))
         return components.url!
     }
 }

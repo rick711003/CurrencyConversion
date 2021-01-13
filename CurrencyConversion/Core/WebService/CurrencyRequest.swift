@@ -11,7 +11,7 @@ class CurrencyRequest: APIResource {
     let methodPath = "/list"
     let queryItems : [URLQueryItem]
     let session: URLSession
-    init(queryItems: [URLQueryItem], session: URLSession) {
+    init(queryItems: [URLQueryItem] = [], session: URLSession) {
         self.queryItems = queryItems
         self.session = session
     }

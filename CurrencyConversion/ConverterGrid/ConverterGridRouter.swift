@@ -11,6 +11,4 @@ class ConverterGridRouter {
     weak var viewController: UIViewController?
 }
 
-extension ConverterGridRouter: ConverterGridRouterInput {
-    
-}
+extension ConverterGridRouter: ConverterGridRouterInput {}
