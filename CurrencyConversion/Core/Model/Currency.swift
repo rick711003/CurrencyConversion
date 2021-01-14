@@ -9,5 +9,5 @@ import Foundation
 
 struct Currency: Codable {
     let name: String?
-    let shotName: String?
+    let shortName: String?
 }

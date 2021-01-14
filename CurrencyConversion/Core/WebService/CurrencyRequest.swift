@@ -29,7 +29,7 @@ extension CurrencyRequest: APIRequest {
                 guard let name = currencyFromDictionary.value as? String else {
                     continue
                 }
-                currencies.append(Currency(name: name, shotName: currencyFromDictionary.key))
+                currencies.append(Currency(name: name, shortName: currencyFromDictionary.key))
             }
             return currencies
         }

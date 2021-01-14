@@ -11,10 +11,10 @@ public class ConverterGridViewController: UIViewController {
     
     private enum Constant {
         static let alertButtonTitle = "Close"
-        static let defaultCurrencyShotName = "USD"
+        static let defaultCurrencyShortName = "USD"
         static let exchangeRateCell = "ExchangeRateCell"
         static let pickerTitle = "Select Currency"
-        static let unknownCurrencyShotName = "UNKNOWN"
+        static let unknownCurrencyShortName = "UNKNOWN"
         static let alertHeight: CGFloat = 370
         static let exchangeRateCellHeight: CGFloat = 100.0
         static let exchangeRateCellRowTotalPadding: CGFloat = 24
@@ -79,9 +79,9 @@ public class ConverterGridViewController: UIViewController {
     private func setCurrencyPickerDefaultValue(with picker: UIPickerView) {
         var defaultIndex = 0
         if let currentSelectedCurrency = presenter?.selectedCurrency {
-            defaultIndex = presenter?.currencies.firstIndex { $0.shotName == currentSelectedCurrency.shotName } ?? 0
+            defaultIndex = presenter?.currencies.firstIndex { $0.shortName == currentSelectedCurrency.shortName } ?? 0
         } else {
-            defaultIndex = presenter?.currencies.firstIndex { $0.shotName == Constant.defaultCurrencyShotName} ?? 0
+            defaultIndex = presenter?.currencies.firstIndex { $0.shortName == Constant.defaultCurrencyShortName} ?? 0
         }
         picker.selectRow(defaultIndex, inComponent: 0, animated: true)
     }
@@ -97,7 +97,7 @@ extension ConverterGridViewController: ConverterGridViewInput {
     }
     
     func updateCurrencyButtonText() {
-        currencyButton.setTitle(presenter?.selectedCurrency?.shotName ?? Constant.unknownCurrencyShotName,
+        currencyButton.setTitle(presenter?.selectedCurrency?.shortName ?? Constant.unknownCurrencyShortName,
                                 for: .normal)
     }
 }

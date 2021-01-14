@@ -18,7 +18,7 @@ class ConverterGridPresenter {
     var currentAmount: Double = 0.0
     
     private func updateCurrentCurrencyExchangeRate() {
-        let exchangeRateObject = exchangeRates.filter { $0.toCurrency ==  selectedCurrency?.shotName }
+        let exchangeRateObject = exchangeRates.filter { $0.toCurrency ==  selectedCurrency?.shortName }
         if let currentRate = exchangeRateObject.first?.rate {
             exchangeRateCellModels = exchangeRates.compactMap {
                 let newRate = ($0.rate ?? 0.0) / currentRate
