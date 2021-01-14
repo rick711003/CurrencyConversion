@@ -8,12 +8,21 @@
 import Foundation
 
 class ExchangeRateCellModel {
-    var name: String
+    var fromCurrencyName: String
+    var toCurrencyFullName: String
+    var toCurrencyShortName: String
     var rate: Double
     var amount: Double
     
-    init(name: String, rate: Double, amount: Double) {
-        self.name = name
+    init(fromCurrencyName: String,
+         toCurrencyFullName: String,
+         toCurrencyShortName: String,
+         rate: Double,
+         amount: Double) {
+        
+        self.fromCurrencyName = fromCurrencyName
+        self.toCurrencyFullName = toCurrencyFullName
+        self.toCurrencyShortName = toCurrencyShortName
         self.rate = rate
         self.amount = amount
     }

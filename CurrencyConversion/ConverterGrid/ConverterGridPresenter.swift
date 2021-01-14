@@ -23,12 +23,23 @@ class ConverterGridPresenter {
             exchangeRateCellModels = exchangeRates.compactMap {
                 let newRate = ($0.rate ?? 0.0) / currentRate
                 let newAmount = (currentAmount != 0) ? currentAmount * newRate : 0.0
-                return ExchangeRateCellModel(name: ($0.toCurrency ?? $0.fromCurrency) ?? "",
+                let fullCurrencyName = getCurrencyFullName(by: ($0.toCurrency ?? $0.fromCurrency)) ?? ""
+                return ExchangeRateCellModel(fromCurrencyName: selectedCurrency?.shortName ?? "" ,
+                                             toCurrencyFullName: fullCurrencyName,
+                                             toCurrencyShortName: ($0.toCurrency ?? $0.fromCurrency) ?? "",
                                              rate: newRate.ceiling(toDecimal: 3),
                                              amount: newAmount.ceiling(toDecimal: 3))
             }
             view?.exchangeRatesIsReady()
         }
+    }
+    
+    private func getCurrencyFullName(by shortName: String?) -> String? {
+        guard !currencies.isEmpty, let shortName = shortName else {
+            return nil
+        }
+        let targetCurrency = currencies.filter { $0.shortName == shortName }
+        return targetCurrency.first?.name
     }
 }
 
@@ -42,6 +53,7 @@ extension ConverterGridPresenter: ConverterGridViewOutput {
     }
     
     func viewIsReady() {
+        interactor?.fetchCurrencies()
         interactor?.fetchExchangeRates()
     }
 
@@ -75,7 +87,10 @@ extension ConverterGridPresenter: ConverterGridInteractorOutput {
     func fetchedExchangeRates(_ exchangeRates: [ExchangeRate]) {
         self.exchangeRates = exchangeRates
         exchangeRateCellModels = exchangeRates.compactMap {
-            return ExchangeRateCellModel(name: ($0.toCurrency ?? $0.fromCurrency) ?? "",
+            let fullCurrencyName = getCurrencyFullName(by: ($0.toCurrency ?? $0.fromCurrency)) ?? ""
+            return ExchangeRateCellModel(fromCurrencyName: "USD",
+                                         toCurrencyFullName: fullCurrencyName,
+                                         toCurrencyShortName: ($0.toCurrency ?? $0.fromCurrency) ?? "",
                                          rate: ($0.rate ?? 0.0).ceiling(toDecimal: 3),
                                          amount: 0.0)
         }

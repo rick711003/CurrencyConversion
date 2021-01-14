@@ -17,41 +17,51 @@
                 <rect key="frame" x="0.0" y="0.0" width="171" height="140"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wB-OU-wCB">
-                        <rect key="frame" x="0.0" y="10" width="171" height="26.5"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wB-OU-wCB">
+                        <rect key="frame" x="4" y="4" width="163" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <color key="textColor" systemColor="systemGrayColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghv-9k-ei2">
+                        <rect key="frame" x="32.5" y="124" width="134.5" height="12"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="10"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghv-9k-ei2">
-                        <rect key="frame" x="0.0" y="116.5" width="171" height="13.5"/>
-                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="11"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQT-4X-crf">
-                        <rect key="frame" x="16" y="61.5" width="139" height="17"/>
-                        <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQT-4X-crf">
+                        <rect key="frame" x="16" y="64" width="139" height="20.5"/>
+                        <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                         <color key="textColor" systemColor="systemRedColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fQ-lk-cnf">
+                        <rect key="frame" x="4" y="124" width="25.5" height="12"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="10"/>
+                        <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="ghv-9k-ei2" secondAttribute="trailing" id="4Ek-Mr-CAZ"/>
                     <constraint firstItem="aQT-4X-crf" firstAttribute="centerX" secondItem="CcG-Uh-92f" secondAttribute="centerX" id="72S-63-VVN"/>
-                    <constraint firstItem="9wB-OU-wCB" firstAttribute="top" secondItem="CcG-Uh-92f" secondAttribute="top" constant="10" id="GVd-2A-S8m"/>
-                    <constraint firstItem="ghv-9k-ei2" firstAttribute="leading" secondItem="CcG-Uh-92f" secondAttribute="leading" id="Jpa-GD-b9n"/>
+                    <constraint firstItem="ghv-9k-ei2" firstAttribute="leading" secondItem="1fQ-lk-cnf" secondAttribute="trailing" constant="3" id="EfJ-yh-yZw"/>
+                    <constraint firstItem="9wB-OU-wCB" firstAttribute="top" secondItem="CcG-Uh-92f" secondAttribute="top" constant="4" id="GVd-2A-S8m"/>
+                    <constraint firstItem="ghv-9k-ei2" firstAttribute="leading" secondItem="1fQ-lk-cnf" secondAttribute="trailing" constant="3" id="MtJ-rE-GdU"/>
                     <constraint firstAttribute="trailing" secondItem="aQT-4X-crf" secondAttribute="trailing" constant="16" id="Np4-Yv-b0O"/>
-                    <constraint firstAttribute="trailing" secondItem="9wB-OU-wCB" secondAttribute="trailing" id="YGf-ep-sZh"/>
-                    <constraint firstItem="aQT-4X-crf" firstAttribute="centerY" secondItem="CcG-Uh-92f" secondAttribute="centerY" id="anJ-jb-1Bn"/>
-                    <constraint firstAttribute="bottom" secondItem="ghv-9k-ei2" secondAttribute="bottom" constant="10" id="i6B-l3-1jv"/>
-                    <constraint firstItem="9wB-OU-wCB" firstAttribute="leading" secondItem="CcG-Uh-92f" secondAttribute="leading" id="yGq-1u-7f1"/>
+                    <constraint firstAttribute="trailing" secondItem="9wB-OU-wCB" secondAttribute="trailing" constant="4" id="YGf-ep-sZh"/>
+                    <constraint firstItem="aQT-4X-crf" firstAttribute="centerY" secondItem="CcG-Uh-92f" secondAttribute="centerY" constant="4" id="anJ-jb-1Bn"/>
+                    <constraint firstAttribute="bottom" secondItem="ghv-9k-ei2" secondAttribute="bottom" constant="4" id="hO9-H0-Wpq"/>
+                    <constraint firstAttribute="bottom" secondItem="1fQ-lk-cnf" secondAttribute="bottom" constant="4" id="pzT-O0-0I9"/>
+                    <constraint firstAttribute="trailing" secondItem="ghv-9k-ei2" secondAttribute="trailing" constant="4" id="rgF-9m-IXK"/>
+                    <constraint firstItem="1fQ-lk-cnf" firstAttribute="leading" secondItem="CcG-Uh-92f" secondAttribute="leading" constant="4" id="swc-Ox-usD"/>
+                    <constraint firstItem="9wB-OU-wCB" firstAttribute="leading" secondItem="CcG-Uh-92f" secondAttribute="leading" constant="4" id="yGq-1u-7f1"/>
                     <constraint firstItem="aQT-4X-crf" firstAttribute="leading" secondItem="CcG-Uh-92f" secondAttribute="leading" constant="16" id="zKe-NM-Omm"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="171" height="140"/>
             <connections>
                 <outlet property="currencyNameLabel" destination="9wB-OU-wCB" id="I2V-8N-0vE"/>
+                <outlet property="exchangeRuleLabel" destination="1fQ-lk-cnf" id="Cnt-rO-zuz"/>
                 <outlet property="exchangeValueLabel" destination="aQT-4X-crf" id="jks-MN-MP5"/>
                 <outlet property="rateLabel" destination="ghv-9k-ei2" id="QB5-p0-8Lx"/>
             </connections>
@@ -59,6 +69,9 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
