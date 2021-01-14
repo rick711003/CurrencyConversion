@@ -23,9 +23,12 @@ final class ConverterGridBuilderTests: XCTestCase {
     }
 
     func testBuildForConverterGrid() {
-        // given
         // when
+        let converterGridViewController = builder.build()
+        
         // then
+        XCTAssertTrue(converterGridViewController.isKind(of: ConverterGridViewController.self))
+        XCTAssertTrue(converterGridViewController.presenter is ConverterGridPresenter)
     }
 }
 

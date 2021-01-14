@@ -41,7 +41,7 @@ class ConverterGridPresenter {
     }
     
     private func getCurrencyFullName(by shortName: String?) -> String? {
-        guard !currencies.isEmpty, let shortName = shortName else {
+        guard !currencies.isEmpty, let shortName = shortName, !shortName.isEmpty else {
             return nil
         }
         let targetCurrency = currencies.filter { $0.shortName == shortName }
