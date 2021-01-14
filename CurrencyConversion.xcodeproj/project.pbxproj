@@ -39,6 +39,7 @@
 		9BF632B925B0049D00876524 /* ConverterGridViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF632B825B0049D00876524 /* ConverterGridViewControllerTests.swift */; };
 		9BF632C025B004E900876524 /* WebServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF632BF25B004E900876524 /* WebServiceTests.swift */; };
 		9BF632C825B004FC00876524 /* CacheManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF632C725B004FC00876524 /* CacheManagerTests.swift */; };
+		9BF6349925B00DF800876524 /* MockObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF6349825B00DF800876524 /* MockObjects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		9BF632B825B0049D00876524 /* ConverterGridViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterGridViewControllerTests.swift; sourceTree = "<group>"; };
 		9BF632BF25B004E900876524 /* WebServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceTests.swift; sourceTree = "<group>"; };
 		9BF632C725B004FC00876524 /* CacheManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManagerTests.swift; sourceTree = "<group>"; };
+		9BF6349825B00DF800876524 /* MockObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockObjects.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 		9BED0A1225AC5CAB009C1487 /* CurrencyConversionTests */ = {
 			isa = PBXGroup;
 			children = (
+				9BF6349825B00DF800876524 /* MockObjects.swift */,
 				9BF632BE25B004C600876524 /* Core */,
 				9BF632A525B0015100876524 /* ConverterGrid */,
 				9BED0A1325AC5CAB009C1487 /* CurrencyConversionTests.swift */,
@@ -430,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BF6349925B00DF800876524 /* MockObjects.swift in Sources */,
 				9BF632B925B0049D00876524 /* ConverterGridViewControllerTests.swift in Sources */,
 				9BF632C825B004FC00876524 /* CacheManagerTests.swift in Sources */,
 				9BF632AF25B0040600876524 /* ConverterGridPresenterTests.swift in Sources */,
