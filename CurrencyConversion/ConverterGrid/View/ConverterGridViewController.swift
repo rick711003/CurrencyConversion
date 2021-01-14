@@ -50,7 +50,7 @@ public class ConverterGridViewController: UIViewController {
         amountTextField.resignFirstResponder()
     }
     
-    func showCurrencyPickerView() {
+    private func showCurrencyPickerView() {
         let alertController = UIAlertController(title: Constant.pickerTitle,
                                                 message: nil,
                                                 preferredStyle: .actionSheet)

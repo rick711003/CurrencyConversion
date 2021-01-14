@@ -14,7 +14,7 @@ class CacheManager {
         static let currencies = "currencies"
         static let lastFetchExchangeRateTime = "lastFetchExchangeRateTime"
         static let lastFetchCurrenciesTime = "lastFetchCurrenciesTime"
-        static let secondsOf30Minute = 1800.0
+        static let secondsOf30Minute: Double = 30 * 60
     }
     
     let userDefaults = UserDefaults.standard
@@ -41,7 +41,7 @@ class CacheManager {
         return nil
     }
     
-    func lastFetchExchangeRateOver30Min() -> Bool {
+    func lastFetchExchangeRateOver30Minute() -> Bool {
         guard let previousSaveTime = userDefaults.value(forKey: Constant.lastFetchExchangeRateTime) as? Date else {
             return true
         }
@@ -71,11 +71,11 @@ class CacheManager {
         return nil
     }
     
-    func lastFetchCurrenciesOver30Min() -> Bool {
+    func lastFetchCurrenciesOver30Minute() -> Bool {
         guard let previousSaveTime = userDefaults.value(forKey: Constant.lastFetchCurrenciesTime) as? Date else {
             return true
         }
         let now = NSDate().timeIntervalSince1970
-        return (now - previousSaveTime.timeIntervalSince1970) > 1800
+        return (now - previousSaveTime.timeIntervalSince1970) > Constant.secondsOf30Minute
     }
 }

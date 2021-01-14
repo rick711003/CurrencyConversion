@@ -19,7 +19,7 @@ class ConverterGridInteractor {
 
 extension ConverterGridInteractor: ConverterGridInteractorInput {
     func fetchCurrencies() {
-        if cacheManager.lastFetchCurrenciesOver30Min() {
+        if cacheManager.lastFetchCurrenciesOver30Minute() {
             service?.fetchCurrenciesList(completion: { [weak self] (currencies: [Currency]?, error: Error?) in
                 guard let currencies = currencies, error == nil else {
                     return
@@ -33,7 +33,7 @@ extension ConverterGridInteractor: ConverterGridInteractorInput {
     }
     
     func fetchExchangeRates() {
-        if cacheManager.lastFetchExchangeRateOver30Min() {
+        if cacheManager.lastFetchExchangeRateOver30Minute() {
             service?.fetchExchangeRates(completion: { [weak self] (exchangeRates: [ExchangeRate]?, error: Error?) in
                 guard let exchangeRates = exchangeRates, error == nil else {
                     return

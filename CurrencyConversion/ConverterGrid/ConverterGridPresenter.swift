@@ -18,17 +18,23 @@ class ConverterGridPresenter {
     var currentAmount: Double = 0.0
     
     private func updateCurrentCurrencyExchangeRate() {
-        let exchangeRateObject = exchangeRates.filter { $0.toCurrency ==  selectedCurrency?.shortName }
-        if let currentRate = exchangeRateObject.first?.rate {
+        let selectedCurrencyExchangeRateObject = exchangeRates.filter { $0.toCurrency ==  selectedCurrency?.shortName }
+        if let selectedCurrencyRate = selectedCurrencyExchangeRateObject.first?.rate {
             exchangeRateCellModels = exchangeRates.compactMap {
-                let newRate = ($0.rate ?? 0.0) / currentRate
-                let newAmount = (currentAmount != 0) ? currentAmount * newRate : 0.0
-                let fullCurrencyName = getCurrencyFullName(by: ($0.toCurrency ?? $0.fromCurrency)) ?? ""
-                return ExchangeRateCellModel(fromCurrencyName: selectedCurrency?.shortName ?? "" ,
-                                             toCurrencyFullName: fullCurrencyName,
-                                             toCurrencyShortName: ($0.toCurrency ?? $0.fromCurrency) ?? "",
-                                             rate: newRate.ceiling(toDecimal: 3),
-                                             amount: newAmount.ceiling(toDecimal: 3))
+                if let baseRate = $0.rate, let toCurrency = $0.toCurrency, let selectedCurrency = self.selectedCurrency {
+                    if let fromCurrencyShortName = selectedCurrency.shortName,
+                        let toCurrencyShortName = toCurrency.isEmpty ? $0.fromCurrency : $0.toCurrency,
+                        let toCurrencyFullName = getCurrencyFullName(by: toCurrencyShortName) {
+                        let updateBaseRateFromSelectedRate = baseRate / selectedCurrencyRate
+                        let updateAmountFromNewRate = currentAmount * updateBaseRateFromSelectedRate
+                        return ExchangeRateCellModel(fromCurrencyName: fromCurrencyShortName,
+                                                     toCurrencyFullName: toCurrencyFullName,
+                                                     toCurrencyShortName: toCurrencyShortName,
+                                                     rate: updateBaseRateFromSelectedRate.ceiling(toDecimal: 3),
+                                                     amount: updateAmountFromNewRate.ceiling(toDecimal: 3))
+                    }
+                }
+                return nil
             }
             view?.exchangeRatesIsReady()
         }
@@ -69,12 +75,12 @@ extension ConverterGridPresenter: ConverterGridViewOutput {
     
     func didChangeAmount(with amount: Double) {
         currentAmount = amount
-        if exchangeRateCellModels.count > 0 {
+        if exchangeRateCellModelsCount > 0 {
            let _ = exchangeRateCellModels.compactMap {
             $0.updateAmount(by: ($0.rate * amount).ceiling(toDecimal: 3))
             }
+            view?.exchangeRatesIsReady()
         }
-        view?.exchangeRatesIsReady()
     }
 }
 
@@ -87,12 +93,17 @@ extension ConverterGridPresenter: ConverterGridInteractorOutput {
     func fetchedExchangeRates(_ exchangeRates: [ExchangeRate]) {
         self.exchangeRates = exchangeRates
         exchangeRateCellModels = exchangeRates.compactMap {
-            let fullCurrencyName = getCurrencyFullName(by: ($0.toCurrency ?? $0.fromCurrency)) ?? ""
-            return ExchangeRateCellModel(fromCurrencyName: "USD",
-                                         toCurrencyFullName: fullCurrencyName,
-                                         toCurrencyShortName: ($0.toCurrency ?? $0.fromCurrency) ?? "",
-                                         rate: ($0.rate ?? 0.0).ceiling(toDecimal: 3),
-                                         amount: 0.0)
+            if let baseRate = $0.rate,
+               let toCurrency = $0.toCurrency,
+               let toCurrencyShortName = toCurrency.isEmpty ? $0.fromCurrency : $0.toCurrency,
+               let toCurrencyFullName = getCurrencyFullName(by: toCurrencyShortName) {
+                return ExchangeRateCellModel(fromCurrencyName: "USD",
+                                             toCurrencyFullName: toCurrencyFullName,
+                                             toCurrencyShortName: toCurrencyShortName,
+                                             rate: baseRate.ceiling(toDecimal: 3),
+                                             amount: 0.0)
+            }
+            return nil
         }
         view?.exchangeRatesIsReady()
     }
@@ -101,10 +112,6 @@ extension ConverterGridPresenter: ConverterGridInteractorOutput {
 extension Double {
     func ceiling(toDecimal decimal: Int) -> Double {
         let numberOfDigits = abs(pow(10.0, Double(decimal)))
-        if self.sign == .minus {
-            return Double(Int(self * numberOfDigits)) / numberOfDigits
-        } else {
-            return Double(ceil(self * numberOfDigits)) / numberOfDigits
-        }
+        return Double(ceil(self * numberOfDigits)) / numberOfDigits
     }
 }
