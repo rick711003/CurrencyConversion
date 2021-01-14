@@ -43,6 +43,7 @@ public class ConverterGridViewController: UIViewController {
     }
     
     @IBAction func tapCurrencyButton(_ sender: UIButton) {
+        amountTextField.resignFirstResponder()
         presenter?.tappedCurrencyButton()
     }
     
