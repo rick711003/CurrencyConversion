@@ -33,6 +33,12 @@
 		9BF6322D25AD5E9A00876524 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BF6322B25AD5E9A00876524 /* Main.storyboard */; };
 		9BF6328C25AED63000876524 /* ExchangeRateCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF6328B25AED63000876524 /* ExchangeRateCellModel.swift */; };
 		9BF6329B25AF24D000876524 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF6329A25AF24D000876524 /* CacheManager.swift */; };
+		9BF632A725B0018500876524 /* ConverterGridBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF632A625B0018500876524 /* ConverterGridBuilderTests.swift */; };
+		9BF632AF25B0040600876524 /* ConverterGridPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF632AE25B0040600876524 /* ConverterGridPresenterTests.swift */; };
+		9BF632B425B0045500876524 /* ConverterGridInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF632B325B0045500876524 /* ConverterGridInteractorTests.swift */; };
+		9BF632B925B0049D00876524 /* ConverterGridViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF632B825B0049D00876524 /* ConverterGridViewControllerTests.swift */; };
+		9BF632C025B004E900876524 /* WebServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF632BF25B004E900876524 /* WebServiceTests.swift */; };
+		9BF632C825B004FC00876524 /* CacheManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF632C725B004FC00876524 /* CacheManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +91,12 @@
 		9BF6322C25AD5E9A00876524 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9BF6328B25AED63000876524 /* ExchangeRateCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateCellModel.swift; sourceTree = "<group>"; };
 		9BF6329A25AF24D000876524 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		9BF632A625B0018500876524 /* ConverterGridBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterGridBuilderTests.swift; sourceTree = "<group>"; };
+		9BF632AE25B0040600876524 /* ConverterGridPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterGridPresenterTests.swift; sourceTree = "<group>"; };
+		9BF632B325B0045500876524 /* ConverterGridInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterGridInteractorTests.swift; sourceTree = "<group>"; };
+		9BF632B825B0049D00876524 /* ConverterGridViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterGridViewControllerTests.swift; sourceTree = "<group>"; };
+		9BF632BF25B004E900876524 /* WebServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceTests.swift; sourceTree = "<group>"; };
+		9BF632C725B004FC00876524 /* CacheManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +163,8 @@
 		9BED0A1225AC5CAB009C1487 /* CurrencyConversionTests */ = {
 			isa = PBXGroup;
 			children = (
+				9BF632BE25B004C600876524 /* Core */,
+				9BF632A525B0015100876524 /* ConverterGrid */,
 				9BED0A1325AC5CAB009C1487 /* CurrencyConversionTests.swift */,
 				9BED0A1525AC5CAB009C1487 /* Info.plist */,
 			);
@@ -228,6 +242,34 @@
 				9BF6329A25AF24D000876524 /* CacheManager.swift */,
 			);
 			path = Cache;
+			sourceTree = "<group>";
+		};
+		9BF632A525B0015100876524 /* ConverterGrid */ = {
+			isa = PBXGroup;
+			children = (
+				9BF632BD25B004A900876524 /* View */,
+				9BF632A625B0018500876524 /* ConverterGridBuilderTests.swift */,
+				9BF632AE25B0040600876524 /* ConverterGridPresenterTests.swift */,
+				9BF632B325B0045500876524 /* ConverterGridInteractorTests.swift */,
+			);
+			path = ConverterGrid;
+			sourceTree = "<group>";
+		};
+		9BF632BD25B004A900876524 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9BF632B825B0049D00876524 /* ConverterGridViewControllerTests.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9BF632BE25B004C600876524 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9BF632BF25B004E900876524 /* WebServiceTests.swift */,
+				9BF632C725B004FC00876524 /* CacheManagerTests.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,6 +430,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BF632B925B0049D00876524 /* ConverterGridViewControllerTests.swift in Sources */,
+				9BF632C825B004FC00876524 /* CacheManagerTests.swift in Sources */,
+				9BF632AF25B0040600876524 /* ConverterGridPresenterTests.swift in Sources */,
+				9BF632B425B0045500876524 /* ConverterGridInteractorTests.swift in Sources */,
+				9BF632A725B0018500876524 /* ConverterGridBuilderTests.swift in Sources */,
+				9BF632C025B004E900876524 /* WebServiceTests.swift in Sources */,
 				9BED0A1425AC5CAB009C1487 /* CurrencyConversionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
