@@ -14,9 +14,7 @@ protocol ConverterGridViewInput: class {
 }
 
 protocol ConverterGridViewOutput {
-    var exchangeRateCellModelsCount: Int { get }
     var exchangeRateCellModels: [ExchangeRateCellModel] { get }
-    var currenciesCount: Int { get }
     var currencies: [Currency] { get }
     var selectedCurrency: Currency? { get }
 

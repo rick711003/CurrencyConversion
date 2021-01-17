@@ -40,19 +40,10 @@ class MockConverterGridInteractorInput: ConverterGridInteractorInput {
 }
 
 class MockConverterGridViewOutput: ConverterGridViewOutput {
-    var mockExchangeRateCellModelsCount: Int = 0
-    var exchangeRateCellModelsCount: Int {
-        return mockExchangeRateCellModelsCount
-    }
     
     var mockExchangeRateCellModels: [ExchangeRateCellModel] = []
     var exchangeRateCellModels: [ExchangeRateCellModel] {
         return mockExchangeRateCellModels
-    }
-    
-    var mockCurrenciesCount: Int = 0
-    var currenciesCount: Int {
-        return mockCurrenciesCount
     }
     
     var mockCurrencies: [Currency] = []
@@ -76,9 +67,9 @@ class MockConverterGridViewOutput: ConverterGridViewOutput {
     }
     
     var didSelectCurrencyCalled = false
-    var mockdidSelectCurrency: Currency?
+    var mockDidSelectCurrency: Currency?
     func didSelectCurrency(with currency: Currency) {
-        mockSelectedCurrency = currency
+        mockDidSelectCurrency = currency
         didSelectCurrencyCalled = true
     }
     

@@ -28,7 +28,11 @@ public class ConverterGridViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var currencyButton: UIButton!
-    private var pickerView: UIPickerView?
+    var pickerView: UIPickerView?
+    
+    public override func loadView() {
+        super.loadView()
+    }
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,20 +59,23 @@ public class ConverterGridViewController: UIViewController {
         let alertController = UIAlertController(title: Constant.pickerTitle,
                                                 message: nil,
                                                 preferredStyle: .actionSheet)
+        alertController.view.translatesAutoresizingMaskIntoConstraints = false
+        alertController.view.heightAnchor.constraint(equalToConstant: Constant.alertHeight).isActive = true
+        
         let currencyPicker = UIPickerView()
         alertController.view.addSubview(currencyPicker)
         currencyPicker.translatesAutoresizingMaskIntoConstraints = false
-        currencyPicker.topAnchor.constraint(equalTo: alertController.view.topAnchor, constant: Constant.pickerTopPadding).isActive = true
-        currencyPicker.rightAnchor.constraint(equalTo: alertController.view.rightAnchor, constant: -Constant.pickerEdgePadding).isActive = true
-        currencyPicker.leftAnchor.constraint(equalTo: alertController.view.leftAnchor, constant: Constant.pickerEdgePadding).isActive = true
+        currencyPicker.topAnchor.constraint(equalTo: alertController.view.topAnchor,
+                                            constant: Constant.pickerTopPadding).isActive = true
+        currencyPicker.rightAnchor.constraint(equalTo: alertController.view.rightAnchor,
+                                              constant: -Constant.pickerEdgePadding).isActive = true
+        currencyPicker.leftAnchor.constraint(equalTo: alertController.view.leftAnchor,
+                                             constant: Constant.pickerEdgePadding).isActive = true
         currencyPicker.heightAnchor.constraint(equalToConstant: Constant.pickerHeight).isActive = true
         currencyPicker.dataSource = self
         currencyPicker.delegate = self
-        
-        alertController.view.translatesAutoresizingMaskIntoConstraints = false
-        alertController.view.heightAnchor.constraint(equalToConstant: Constant.alertHeight).isActive = true
-
         currencyPicker.backgroundColor = .clear
+        
         pickerView = currencyPicker
         setCurrencyPickerDefaultValue(with: currencyPicker)
         
@@ -79,12 +86,23 @@ public class ConverterGridViewController: UIViewController {
     
     private func setCurrencyPickerDefaultValue(with picker: UIPickerView) {
         var defaultIndex = 0
-        if let currentSelectedCurrency = presenter?.selectedCurrency {
-            defaultIndex = presenter?.currencies.firstIndex { $0.shortName == currentSelectedCurrency.shortName } ?? 0
-        } else {
-            defaultIndex = presenter?.currencies.firstIndex { $0.shortName == Constant.defaultCurrencyShortName} ?? 0
+        var updateShortName = Constant.defaultCurrencyShortName
+        guard let presenter = presenter else {
+            return
         }
+        
+        if let currentSelectedCurrency = presenter.selectedCurrency,
+           let shortName = currentSelectedCurrency.shortName {
+            updateShortName = shortName
+        }
+        
+        if let finalIndex = presenter.currencies.firstIndex(where: { $0.shortName == updateShortName }) {
+            defaultIndex = finalIndex
+        }
+        
         picker.selectRow(defaultIndex, inComponent: 0, animated: true)
+        
+        pickerView?.accessibilityValue = updateShortName
     }
 }
 
@@ -111,7 +129,10 @@ extension ConverterGridViewController: UICollectionViewDataSource {
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter?.exchangeRateCellModelsCount ?? 0
+        guard let presenter = presenter else {
+            return 0
+        }
+        return presenter.exchangeRateCellModels.count
     }
     
     public func collectionView(_ collectionView: UICollectionView,
@@ -140,11 +161,17 @@ extension ConverterGridViewController: UICollectionViewDelegateFlowLayout {
 extension ConverterGridViewController: UIPickerViewDataSource {
 
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        guard let _ = presenter else {
+            return 0
+        }
         return 1
     }
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return presenter?.currenciesCount ?? 1
+        guard let presenter = presenter else {
+            return 0
+        }
+        return presenter.currencies.count
     }
     
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -168,12 +195,16 @@ extension ConverterGridViewController: UIPickerViewDelegate {
 
 extension ConverterGridViewController: UITextFieldDelegate {
     public func textFieldDidEndEditing(_ textField: UITextField) {
-        let amount = Double(textField.text ?? "") ?? 0.0
+        guard let text = textField.text, let amount = Double(text)  else {
+            return
+        }
         presenter?.didChangeAmount(with: amount)
     }
     
     public func textFieldDidChangeSelection(_ textField: UITextField) {
-        let amount = Double(textField.text ?? "") ?? 0.0
+        guard let text = textField.text, let amount = Double(text)  else {
+            return
+        }
         presenter?.didChangeAmount(with: amount)
     }
 }

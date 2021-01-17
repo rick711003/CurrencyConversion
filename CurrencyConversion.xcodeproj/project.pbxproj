@@ -39,6 +39,10 @@
 		9BF6349925B00DF800876524 /* MockObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF6349825B00DF800876524 /* MockObjects.swift */; };
 		9BF634A725B07D9400876524 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF634A625B07D9400876524 /* main.swift */; };
 		9BF634C525B0802800876524 /* CurrencyConversionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF634C425B0802800876524 /* CurrencyConversionUITests.swift */; };
+		9BF634D525B3F00A00876524 /* ExchangeRateCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF634D425B3F00A00876524 /* ExchangeRateCellTests.swift */; };
+		9BF634EA25B4103100876524 /* TestingRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF634E325B40A4E00876524 /* TestingRootViewController.swift */; };
+		9BF634EB25B4103100876524 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF634D925B409F200876524 /* TestingAppDelegate.swift */; };
+		9BF634EC25B4103100876524 /* TestingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF634DE25B40A2700876524 /* TestingSceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +101,10 @@
 		9BF6349825B00DF800876524 /* MockObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockObjects.swift; sourceTree = "<group>"; };
 		9BF634A625B07D9400876524 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		9BF634C425B0802800876524 /* CurrencyConversionUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyConversionUITests.swift; sourceTree = "<group>"; };
+		9BF634D425B3F00A00876524 /* ExchangeRateCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateCellTests.swift; sourceTree = "<group>"; };
+		9BF634D925B409F200876524 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
+		9BF634DE25B40A2700876524 /* TestingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingSceneDelegate.swift; sourceTree = "<group>"; };
+		9BF634E325B40A4E00876524 /* TestingRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingRootViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +171,9 @@
 		9BED0A1225AC5CAB009C1487 /* CurrencyConversionTests */ = {
 			isa = PBXGroup;
 			children = (
+				9BF634D925B409F200876524 /* TestingAppDelegate.swift */,
+				9BF634DE25B40A2700876524 /* TestingSceneDelegate.swift */,
+				9BF634E325B40A4E00876524 /* TestingRootViewController.swift */,
 				9BF6349825B00DF800876524 /* MockObjects.swift */,
 				9BF632BE25B004C600876524 /* Core */,
 				9BF632A525B0015100876524 /* ConverterGrid */,
@@ -259,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				9BF632B825B0049D00876524 /* ConverterGridViewControllerTests.swift */,
+				9BF634D425B3F00A00876524 /* ExchangeRateCellTests.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -431,10 +443,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BF634D525B3F00A00876524 /* ExchangeRateCellTests.swift in Sources */,
 				9BF6349925B00DF800876524 /* MockObjects.swift in Sources */,
+				9BF634EC25B4103100876524 /* TestingSceneDelegate.swift in Sources */,
 				9BF632B925B0049D00876524 /* ConverterGridViewControllerTests.swift in Sources */,
 				9BF632C825B004FC00876524 /* CacheManagerTests.swift in Sources */,
 				9BF632AF25B0040600876524 /* ConverterGridPresenterTests.swift in Sources */,
+				9BF634EB25B4103100876524 /* TestingAppDelegate.swift in Sources */,
+				9BF634EA25B4103100876524 /* TestingRootViewController.swift in Sources */,
 				9BF632B425B0045500876524 /* ConverterGridInteractorTests.swift in Sources */,
 				9BF632A725B0018500876524 /* ConverterGridBuilderTests.swift in Sources */,
 				9BF632C025B004E900876524 /* WebServiceTests.swift in Sources */,

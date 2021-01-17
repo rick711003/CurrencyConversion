@@ -7,7 +7,6 @@
 
 import UIKit
 
-let kIsRunningTests = NSClassFromString("XCTestCase") != nil
-let kAppDelegateClass = kIsRunningTests ? nil : NSStringFromClass(AppDelegate.self)
+let appDelegateClass: AnyClass = NSClassFromString("TestingAppDelegate") ?? AppDelegate.self
 
-UIApplicationMain(CommandLine.argc, CommandLine.unsafeArgv, nil, kAppDelegateClass)
+UIApplicationMain(CommandLine.argc, CommandLine.unsafeArgv, nil, NSStringFromClass(appDelegateClass))

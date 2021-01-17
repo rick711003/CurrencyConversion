@@ -50,14 +50,6 @@ class ConverterGridPresenter {
 }
 
 extension ConverterGridPresenter: ConverterGridViewOutput {
-    var exchangeRateCellModelsCount: Int {
-        return exchangeRateCellModels.count
-    }
-    
-    var currenciesCount: Int {
-        return exchangeRates.count
-    }
-    
     func viewIsReady() {
         interactor?.fetchCurrencies()
         interactor?.fetchExchangeRates()
@@ -75,7 +67,7 @@ extension ConverterGridPresenter: ConverterGridViewOutput {
     
     func didChangeAmount(with amount: Double) {
         currentAmount = amount
-        if exchangeRateCellModelsCount > 0 {
+        if exchangeRateCellModels.count > 0 {
            let _ = exchangeRateCellModels.compactMap {
             $0.updateAmount(by: ($0.rate * amount).ceiling(toDecimal: 3))
             }

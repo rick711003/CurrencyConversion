@@ -18,7 +18,7 @@ public class ExchangeRateCell: UICollectionViewCell {
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var exchangeValueLabel: UILabel!
     @IBOutlet weak var exchangeRuleLabel: UILabel!
-    var cellModel: ExchangeRateCellModel? = nil
+    private var cellModel: ExchangeRateCellModel? = nil
         
     public override func awakeFromNib() {
         contentView.layer.borderWidth = Constant.borderWidth

@@ -147,7 +147,7 @@ final class ConverterGridPresenterTests: XCTestCase {
         presenter.fetchedExchangeRates([TWDExchangeRate, USDExchangeRate])
         
         // then
-        XCTAssertTrue(presenter.exchangeRateCellModelsCount == 1)
+        XCTAssertTrue(presenter.exchangeRateCellModels.count == 1)
         XCTAssertTrue(presenter.exchangeRateCellModels.first?.fromCurrencyName == "USD")
         XCTAssertTrue(presenter.exchangeRateCellModels.first?.toCurrencyFullName == "Taiwan Dollar")
         XCTAssertTrue(presenter.exchangeRateCellModels.first?.toCurrencyShortName == "TWD")
